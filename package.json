@@ -1,0 +1,53 @@
+{
+  "name": "physics3d-engine",
+  "version": "1.0.0",
+  "description": "A lightweight 3D physics engine for web browsers with collision detection and rigid body dynamics",
+  "main": "dist/index.umd.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "clean": "rimraf dist",
+    "prebuild": "npm run clean",
+    "prepare": "npm run build",
+    "example": "npx serve examples"
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md"
+  ],
+  "keywords": [
+    "physics",
+    "3d",
+    "engine",
+    "collision",
+    "dynamics",
+    "webgl",
+    "browser",
+    "typescript"
+  ],
+  "author": "Zia Ullah Khan",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/physics3d-engine.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/physics3d-engine/issues"
+  },
+  "homepage": "https://github.com/yourusername/physics3d-engine#readme",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.6",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.4",
+    "@types/node": "^24.0.10",
+    "rimraf": "^6.0.1",
+    "rollup": "^2.79.2",
+    "serve": "^14.2.4",
+    "tslib": "^2.8.1",
+    "typescript": "^5.8.3"
+  }
+}

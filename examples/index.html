@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics3D Engine Demo</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .demo-area {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .canvas-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        canvas {
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            background: #000;
+            cursor: crosshair;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        canvas:active {
+            cursor: grabbing;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .reset {
+            background: linear-gradient(45deg, #f44336, #d32f2f);
+        }
+
+        .info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .info-value {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        .instructions {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .instructions h3 {
+            margin-top: 0;
+        }
+
+        .instructions ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .instructions li {
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .instructions li:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Physics3D Engine Demo</h1>
+        
+        <div class="demo-area">
+            <div class="canvas-container">
+                <canvas id="physicsCanvas" width="800" height="600"></canvas>
+            </div>
+            
+            <div class="controls">
+                <button onclick="addSphere()">Add Sphere</button>
+                <button onclick="addBox()">Add Box</button>
+                <button onclick="addBall()">Add Bouncy Ball</button>
+                <button onclick="toggleGravity()">Toggle Gravity</button>
+                <button onclick="clearExcess()">Clear Excess</button>
+                <button onclick="resetScene()" class="reset">Reset Scene</button>
+            </div>
+            
+            <div class="info">
+                <div class="info-card">
+                    <div>Objects</div>
+                    <div class="info-value" id="objectCount">0</div>
+                </div>
+                <div class="info-card">
+                    <div>Collisions</div>
+                    <div class="info-value" id="collisionCount">0</div>
+                </div>
+                <div class="info-card">
+                    <div>FPS</div>
+                    <div class="info-value" id="fps">60</div>
+                </div>
+                <div class="info-card">
+                    <div>Gravity</div>
+                    <div class="info-value" id="gravityStatus">ON</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>🎮 How to Use</h3>
+            <ul>
+                <li><strong>Add Sphere:</strong> Creates a bouncing sphere with random properties</li>
+                <li><strong>Add Box:</strong> Creates a box that falls and collides</li>
+                <li><strong>Add Bouncy Ball:</strong> Creates a highly bouncy ball</li>
+                <li><strong>Toggle Gravity:</strong> Turn gravity on/off to see objects float</li>
+                <li><strong>Clear Excess:</strong> Remove half the objects to improve performance</li>
+                <li><strong>Reset Scene:</strong> Clear all objects and start fresh</li>
+                <li><strong>Click Canvas:</strong> Add single object at mouse position</li>
+                <li><strong>Drag Mouse:</strong> Hold and drag to continuously spawn objects</li>
+                <li><strong>Keyboard:</strong> Space (gravity), R (reset), S (sphere), B (box)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Load the physics engine -->
+    <script src="../dist/index.umd.js"></script>
+    <script src="demo.js"></script>
+</body>
+</html>
