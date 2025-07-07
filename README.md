@@ -61,7 +61,7 @@ update();
 Try the interactive demo:
 
 ```bash
-git clone https://github.com/yourusername/physics3d-engine.git
+git clone https://github.com/Zia-ullah-khan/physics3d-engine.git
 cd physics3d-engine
 npm install
 npm run build
@@ -238,7 +238,7 @@ function animate() {
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/physics3d-engine.git
+git clone https://github.com/Zia-ullah-khan/physics3d-engine.git
 cd physics3d-engine
 
 # Install dependencies
@@ -303,9 +303,8 @@ MIT License - see [LICENSE](LICENSE) file for details.
 ## 📞 Support
 
 - 📖 [Documentation](./examples/API.md)
-- 🐛 [Issues](https://github.com/yourusername/physics3d-engine/issues)
-- 💬 [Discussions](https://github.com/yourusername/physics3d-engine/discussions)
-- 📧 [Email](mailto:your-email@example.com)
+- 🐛 [Issues](https://github.com/Zia-ullah-khan/physics3d-engine/issues)
+- 💬 [Discussions](https://github.com/Zia-ullah-khan/physics3d-engine/discussions)
 
 ---
 

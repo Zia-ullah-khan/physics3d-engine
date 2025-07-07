@@ -1,6 +1,6 @@
 {
   "name": "physics3d-engine",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A lightweight 3D physics engine for web browsers with collision detection and rigid body dynamics",
   "main": "dist/index.umd.js",
   "module": "dist/index.esm.js",
